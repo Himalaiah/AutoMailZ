@@ -125,33 +125,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-Z7-som">
-                                <rect key="frame" x="149" y="127" width="303" height="218"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="148" width="400" height="301"/>
-                                </variation>
-                            </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUV-KX-pCk">
-                                <rect key="frame" x="149" y="81" width="303" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BkV-7O-B6M">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0oY-UU-Ynu">
-                                <rect key="frame" x="0.0" y="108" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="6UM-NJ-Xwf" id="67u-3S-hY8"/>
-                                </connections>
-                            </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af9-6G-jPl">
-                                <rect key="frame" x="149" y="77" width="303" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cpY-f8-Vsv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -195,28 +168,55 @@
                                     <action selector="setLocation:" destination="6UM-NJ-Xwf" eventType="touchUpInside" id="QOl-p1-Jop"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-Z7-som">
+                                <rect key="frame" x="149" y="127" width="303" height="218"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="148" width="400" height="301"/>
+                                </variation>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUV-KX-pCk">
+                                <rect key="frame" x="149" y="81" width="303" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BkV-7O-B6M">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0oY-UU-Ynu">
+                                <rect key="frame" x="0.0" y="108" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6UM-NJ-Xwf" id="67u-3S-hY8"/>
+                                </connections>
+                            </searchBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af9-6G-jPl">
+                                <rect key="frame" x="149" y="77" width="303" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="OIh-L3-eUv"/>
-                                <exclude reference="BkV-7O-B6M"/>
-                                <exclude reference="0oY-UU-Ynu"/>
-                                <exclude reference="af9-6G-jPl"/>
                                 <exclude reference="cpY-f8-Vsv"/>
                                 <exclude reference="kAk-2f-R93"/>
                                 <exclude reference="BAP-Fg-hO1"/>
                                 <exclude reference="hpj-6U-ofG"/>
+                                <exclude reference="BkV-7O-B6M"/>
+                                <exclude reference="0oY-UU-Ynu"/>
+                                <exclude reference="af9-6G-jPl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <exclude reference="xUV-KX-pCk"/>
-                                <exclude reference="BkV-7O-B6M"/>
-                                <exclude reference="0oY-UU-Ynu"/>
                                 <include reference="cpY-f8-Vsv"/>
                                 <include reference="BAP-Fg-hO1"/>
                                 <include reference="hpj-6U-ofG"/>
+                                <exclude reference="xUV-KX-pCk"/>
+                                <exclude reference="BkV-7O-B6M"/>
+                                <exclude reference="0oY-UU-Ynu"/>
                             </mask>
                         </variation>
                     </view>

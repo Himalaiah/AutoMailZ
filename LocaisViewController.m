@@ -21,6 +21,8 @@
     //ponto
     _ponto=[[MKPointAnnotation alloc]init];
     [_ponto setTitle:@"voce esta aqui meu caro!"];
+    _ponto.coordinate=_local.regiao.center;
+    [mapa  addAnnotation:_ponto];
     //pontos em volta
     E=[[MKPointAnnotation alloc]init];
     W=[[MKPointAnnotation alloc]init];
@@ -40,17 +42,23 @@
     [mapa setRegion:_local.regiao animated:YES];
     circle=[MKCircle circleWithCenterCoordinate:_local.regiao.center radius:self.raioSlider.value];
     [mapa addOverlay:circle];
+    
+    _labelLocal.text=_local.nome;
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     //marca onde o usuario esta
+    [mapa  removeAnnotation:_user];
     _user=[locations lastObject];
-    _ponto.coordinate=_user.coordinate;
-    [mapa  addAnnotation:_ponto];
-    MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance(_user.coordinate, 30, 30);
+    
+    [mapa  addAnnotation:_user];
+    MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance(_local.regiao.center, 30, 30);
     [mapa setRegion:regiao animated:YES];
     
-    //verifica se estou na regiao "setada"
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 
@@ -92,8 +100,11 @@
         MKCoordinateRegion region;
         region.center.latitude = placemark.location.coordinate.latitude;
         region.center.longitude = placemark.location.coordinate.longitude;
-        
+        [mapa  removeAnnotation:_ponto];
+        [mapa  removeAnnotation:_user];
         _local.regiao=region;
+        _ponto.coordinate=_local.regiao.center;
+        [mapa  addAnnotation:_ponto];
         [mapa setRegion:region animated:YES];
         CLLocationDistance fenceDistance = self.raioSlider.value;
         _place = CLLocationCoordinate2DMake(region.center.latitude, region.center.longitude);
@@ -108,29 +119,12 @@
                            NSLog(@"placemark %@",placemark);
                            //String to hold address
                            NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-                         
-                        _labelLocal.text = locatedAt;}
+                           _local.nome= locatedAt;
+                           _labelLocal.text=_local.nome;
+                       }
          
          ];
     }];
-    
-    
-     //   CLLocation *salvaLugar = [[CLLocation alloc]initWithLatitude:  placemark.location.coordinate.latitude longitude: placemark.location.coordinate.longitude];
-        
-        
-   /*     [geocoder reverseGeocodeLocation:salvaLugar
-                       completionHandler:^(NSArray *placemarks, NSError *error) {
-                           CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                           NSLog(@"placemark %@",placemark);
-                           //String to hold address
-                           NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-                           _labelLocal.text = locatedAt;
-   // }];*/
-    
-    
-    
-   
-                       
 }
 
 - (IBAction)mudaRaio:(id)sender {
