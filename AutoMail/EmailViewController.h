@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface EmailViewController : UIViewController
+@interface EmailViewController : UIViewController{
+    MFMailComposeViewController *mc;
+}
+@property MFMailComposeViewController *mc;
 @property (weak, nonatomic) IBOutlet UITextField *destinatarioEmail;
 @property (weak, nonatomic) IBOutlet UITextField *assuntoEmail;
 @property (weak, nonatomic) IBOutlet UITextView *mensagemEmail;

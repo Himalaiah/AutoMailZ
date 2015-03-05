@@ -8,13 +8,15 @@
 
 #import "EmailViewController.h"
 
-@interface EmailViewController ()
+@interface EmailViewController (){
+    
+}
 
 @end
 
 @implementation EmailViewController
 
-@synthesize destinatarioEmail, assuntoEmail, mensagemEmail;
+@synthesize destinatarioEmail, assuntoEmail, mensagemEmail, mc;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,8 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)setEmail:(id)sender {
+    mc = [[MFMailComposeViewController alloc] init];
+    NSArray *destin = [NSArray arrayWithObjects:[destinatarioEmail text], nil];
+    [mc setSubject:[assuntoEmail text]];
+    [mc setMessageBody:[mensagemEmail text] isHTML:NO];
+    [mc setToRecipients:destin];
 }
 @end
