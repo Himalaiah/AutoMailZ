@@ -437,6 +437,15 @@
                                     <rect key="frame" x="16" y="262" width="346" height="329"/>
                                 </variation>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07T-XE-MdS">
+                                <rect key="frame" x="289" y="516" width="46" height="30"/>
+                                <state key="normal" title="Set!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setEmail:" destination="kSo-jD-OKW" eventType="touchUpInside" id="aTQ-0Y-aim"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
