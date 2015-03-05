@@ -291,7 +291,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kSo-jD-OKW" kind="showDetail" id="2ZJ-Ut-iet"/>
+                                            <segue destination="cqo-0l-mzb" kind="show" id="RbH-DR-vgK"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -401,15 +401,14 @@
             <point key="canvasLocation" x="2494.5" y="-342.75"/>
         </scene>
         <!--EMAIL-->
-        <scene sceneID="OH6-6C-qyZ">
+        <scene sceneID="yNa-eU-vxR">
             <objects>
-                <viewController id="kSo-jD-OKW" customClass="EmailViewController" sceneMemberID="viewController">
+                <viewController id="cqo-0l-mzb" customClass="EmailViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RW7-gr-2TV"/>
-                        <viewControllerLayoutGuide type="bottom" id="oIo-4R-zyA"/>
+                        <viewControllerLayoutGuide type="top" id="Tke-Pa-GDa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sa9-OF-yBt"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TFz-Kv-Su9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="qXS-YJ-BcW">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Para : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGU-99-Ixe">
@@ -417,36 +416,54 @@
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="126" width="50" height="21"/>
+                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i7m-QF-Vcu">
                                 <rect key="frame" x="105" y="141" width="257" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="127" y="176" width="257" height="30"/>
+                                </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assunto :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-MM-66A">
                                 <rect key="frame" x="16" y="145" width="73" height="21"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="180" width="73" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mensagem :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ST-1V-w4E">
                                 <rect key="frame" x="16" y="202" width="95" height="21"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="237" width="95" height="21"/>
+                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uxc-Y5-0PU">
                                 <rect key="frame" x="105" y="87" width="257" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="127" y="122" width="257" height="30"/>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07T-XE-MdS">
                                 <rect key="frame" x="289" y="516" width="46" height="30"/>
                                 <state key="normal" title="Set!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="311" y="551" width="46" height="30"/>
+                                </variation>
                                 <connections>
-                                    <action selector="setEmail:" destination="kSo-jD-OKW" eventType="touchUpInside" id="aTQ-0Y-aim"/>
+                                    <action selector="setEmail:" destination="cqo-0l-mzb" eventType="touchUpInside" id="QMb-jj-aM7"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFP-IT-BAu">
@@ -457,42 +474,44 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="262" width="346" height="329"/>
+                                    <rect key="frame" x="38" y="297" width="346" height="329"/>
                                 </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mGU-99-Ixe"/>
+                                <exclude reference="i7m-QF-Vcu"/>
+                                <exclude reference="ahU-MM-66A"/>
+                                <exclude reference="7ST-1V-w4E"/>
+                                <exclude reference="Uxc-Y5-0PU"/>
+                                <exclude reference="07T-XE-MdS"/>
+                                <exclude reference="xFP-IT-BAu"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mGU-99-Ixe"/>
+                                <include reference="i7m-QF-Vcu"/>
+                                <include reference="ahU-MM-66A"/>
+                                <include reference="7ST-1V-w4E"/>
+                                <include reference="Uxc-Y5-0PU"/>
+                                <include reference="07T-XE-MdS"/>
+                                <include reference="xFP-IT-BAu"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="EMAIL" id="X70-vp-KXX">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="6j8-dL-Cts"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="EMAIL" id="V92-bU-b9h"/>
                     <connections>
-                        <outlet property="assuntoEmail" destination="i7m-QF-Vcu" id="gQy-rr-0T9"/>
-                        <outlet property="destinatarioEmail" destination="Uxc-Y5-0PU" id="Z9Q-kH-Ua0"/>
-                        <outlet property="mensagemEmail" destination="xFP-IT-BAu" id="IoQ-Zb-TKu"/>
+                        <outlet property="assuntoEmail" destination="i7m-QF-Vcu" id="Zas-jL-fIg"/>
+                        <outlet property="destinatarioEmail" destination="Uxc-Y5-0PU" id="gES-mk-4Ek"/>
+                        <outlet property="mensagemEmail" destination="xFP-IT-BAu" id="Hzk-NR-pwB"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G1g-OK-Irt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0u-6q-CRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3546" y="784.5"/>
-        </scene>
-        <!--Email View Controller-->
-        <scene sceneID="07G-ry-gTK">
-            <objects>
-                <viewController id="Td3-i0-9X6" customClass="EmailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="t0X-IU-Cdb"/>
-                        <viewControllerLayoutGuide type="bottom" id="lYZ-UC-cKf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="weR-aZ-hNf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xIx-F5-vsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4171" y="570"/>
+            <point key="canvasLocation" x="3289.5" y="588"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="edZ-nr-tKN">
