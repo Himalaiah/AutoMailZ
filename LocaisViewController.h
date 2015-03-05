@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) MKCircle *circle;
 @property  CLLocationCoordinate2D place;
-@property CLLocation *user;
+@property CLLocation<MKAnnotation> *user;
 
 @property MKPointAnnotation *ponto;//ponto principal
 @property MKPointAnnotation *E,*W,*N,*S;//pontos regiao
