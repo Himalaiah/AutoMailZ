@@ -17,7 +17,11 @@
 @property (strong, nonatomic) MKCircle *circle;
 @property  CLLocationCoordinate2D place;
 @property CLLocation *user;
-@property MKPointAnnotation *ponto;
+
+@property MKPointAnnotation *ponto;//ponto principal
+@property MKPointAnnotation *E,*W,*N,*S;//pontos regiao
+
+
 @property (strong,nonatomic)CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UISearchBar *endereco;
 @property (strong, nonatomic) IBOutlet MKMapView *mapa;
@@ -28,6 +32,7 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)theSearchBar;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelLocal;
+- (IBAction)setLocation:(id)sender;
 
 
 

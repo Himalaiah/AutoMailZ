@@ -183,6 +183,18 @@
                                     <rect key="frame" x="16" y="119" width="368" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpj-6U-ofG">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="SET">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="338" y="457" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="setLocation:" destination="6UM-NJ-Xwf" eventType="touchUpInside" id="QOl-p1-Jop"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -194,6 +206,7 @@
                                 <exclude reference="cpY-f8-Vsv"/>
                                 <exclude reference="kAk-2f-R93"/>
                                 <exclude reference="BAP-Fg-hO1"/>
+                                <exclude reference="hpj-6U-ofG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -203,6 +216,7 @@
                                 <exclude reference="0oY-UU-Ynu"/>
                                 <include reference="cpY-f8-Vsv"/>
                                 <include reference="BAP-Fg-hO1"/>
+                                <include reference="hpj-6U-ofG"/>
                             </mask>
                         </variation>
                     </view>
