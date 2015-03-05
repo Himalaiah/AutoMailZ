@@ -18,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //ponto
+    _ponto=[[MKPointAnnotation alloc]init];
+    [_ponto setTitle:@"voce esta aqui meu caro!"];
     
     [endereco setDelegate:self ];
     [mapa setDelegate:self];
@@ -25,12 +28,21 @@
     
     locationManager = [[CLLocationManager alloc]init];
     [locationManager setDelegate:self];
+    [locationManager startUpdatingLocation];
+    
+    
     [mapa setRegion:_local.regiao animated:YES];
     circle=[MKCircle circleWithCenterCoordinate:_local.regiao.center radius:self.raioSlider.value];
     [mapa addOverlay:circle];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    
+    _user=[locations lastObject];
+    
+    _ponto.coordinate=_user.coordinate;
+    [mapa  addAnnotation:_ponto];
+    
     CLLocationCoordinate2D loc=[[locations lastObject]coordinate];
     
     MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance(loc, 30, 30);
