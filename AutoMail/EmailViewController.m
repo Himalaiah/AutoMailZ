@@ -7,12 +7,17 @@
 //
 
 #import "EmailViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface EmailViewController ()
+@interface EmailViewController (){
+    
+}
 
 @end
 
 @implementation EmailViewController
+
+MFMailComposeViewController *mc;
 
 @synthesize destinatarioEmail, assuntoEmail, mensagemEmail;
 
@@ -26,8 +31,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)setEmail:(id)sender {
+    mc = [[MFMailComposeViewController alloc] init];
+    NSArray *destin = [NSArray arrayWithObjects:[destinatarioEmail text], nil];
+    [mc setSubject:[assuntoEmail text]];
+    [mc setMessageBody:[mensagemEmail text] isHTML:NO];
+    [mc setToRecipients:destin];
 }
 @end
