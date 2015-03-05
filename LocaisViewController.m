@@ -141,14 +141,10 @@
 
 
 - (IBAction)setLocation:(id)sender {
-    E.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude + 0.00050);
-    W.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude - 0.00050);
-    S.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude - 0.00050, _ponto.coordinate.longitude );
-    N.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude+ 0.00050, _ponto.coordinate.longitude);
-    
-    [mapa addAnnotation:E];
-    [mapa addAnnotation:W];
-    [mapa addAnnotation:S];
-    [mapa addAnnotation:N];
+    float raio=self.raioSlider.value/100000;
+    E.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude + raio);
+    W.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude - raio);
+    S.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude - raio, _ponto.coordinate.longitude );
+    N.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude+ raio, _ponto.coordinate.longitude);
 }
 @end
