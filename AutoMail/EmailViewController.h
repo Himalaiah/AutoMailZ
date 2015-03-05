@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface EmailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *destinatarioEmail;
+@property (weak, nonatomic) IBOutlet UITextField *assuntoEmail;
+@property (weak, nonatomic) IBOutlet UITextView *mensagemEmail;
+- (IBAction)setEmail:(id)sender;
 
 @end
