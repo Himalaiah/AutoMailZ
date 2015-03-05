@@ -6,18 +6,22 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>0AB585AA-F6AD-4C23-9F92-06EE9042FAEC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AutoMail</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6D8559773E234133968E7CE3FBCBA10A22FA1A11</key>
-		<string>https://github.com/Himalaiah/AutoMailZ.git</string>
+		<string>https://github.com/Himalaiah/AutoMailZ</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AutoMail.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6D8559773E234133968E7CE3FBCBA10A22FA1A11</key>
-		<string>automailz/</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Himalaiah/AutoMailZ.git</string>
+	<string>https://github.com/Himalaiah/AutoMailZ</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -30,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6D8559773E234133968E7CE3FBCBA10A22FA1A11</string>
 			<key>IDESourceControlWCCName</key>
-			<string>automailz</string>
+			<string>AutoMailZ</string>
 		</dict>
 	</array>
 </dict>
