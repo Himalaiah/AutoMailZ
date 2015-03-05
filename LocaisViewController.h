@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) MKCircle *circle;
 @property  CLLocationCoordinate2D place;
+@property CLLocation *user;
+@property MKPointAnnotation *ponto;
 @property (strong,nonatomic)CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UISearchBar *endereco;
 @property (strong, nonatomic) IBOutlet MKMapView *mapa;
