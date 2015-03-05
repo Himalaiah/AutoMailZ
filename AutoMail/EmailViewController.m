@@ -35,4 +35,8 @@
     [mc setMessageBody:[mensagemEmail text] isHTML:NO];
     [mc setToRecipients:destin];
 }
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 @end
