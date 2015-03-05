@@ -14,13 +14,19 @@
 
 @implementation LocaisViewController
 
-@synthesize mapa, endereco,locationManager, circle;
+@synthesize mapa, endereco,locationManager, circle,E,W,S,N;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //ponto
     _ponto=[[MKPointAnnotation alloc]init];
     [_ponto setTitle:@"voce esta aqui meu caro!"];
+    //pontos em volta
+    E=[[MKPointAnnotation alloc]init];
+    W=[[MKPointAnnotation alloc]init];
+    N=[[MKPointAnnotation alloc]init];
+    S=[[MKPointAnnotation alloc]init];
+    
     
     [endereco setDelegate:self ];
     [mapa setDelegate:self];
@@ -37,17 +43,16 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    
+    //marca onde o usuario esta
     _user=[locations lastObject];
-    
     _ponto.coordinate=_user.coordinate;
     [mapa  addAnnotation:_ponto];
-    
-    CLLocationCoordinate2D loc=[[locations lastObject]coordinate];
-    
-    MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance(loc, 30, 30);
+    MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance(_user.coordinate, 30, 30);
     [mapa setRegion:regiao animated:YES];
+    
+    //verifica se estou na regiao "setada"
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -135,4 +140,15 @@
 }
 
 
+- (IBAction)setLocation:(id)sender {
+    E.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude + 0.00050);
+    W.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude - 0.00050);
+    S.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude - 0.00050, _ponto.coordinate.longitude );
+    N.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude+ 0.00050, _ponto.coordinate.longitude);
+    
+    [mapa addAnnotation:E];
+    [mapa addAnnotation:W];
+    [mapa addAnnotation:S];
+    [mapa addAnnotation:N];
+}
 @end
