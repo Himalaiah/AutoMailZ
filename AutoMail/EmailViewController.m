@@ -7,7 +7,6 @@
 //
 
 #import "EmailViewController.h"
-#import <MessageUI/MessageUI.h>
 
 @interface EmailViewController (){
     
@@ -17,9 +16,7 @@
 
 @implementation EmailViewController
 
-MFMailComposeViewController *mc;
-
-@synthesize destinatarioEmail, assuntoEmail, mensagemEmail;
+@synthesize destinatarioEmail, assuntoEmail, mensagemEmail, mc;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
