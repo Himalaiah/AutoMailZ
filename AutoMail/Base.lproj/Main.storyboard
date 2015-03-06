@@ -157,7 +157,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="20" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-HQ-8z8">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="90" minValue="60" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-HQ-8z8">
                                 <rect key="frame" x="241" y="353" width="118" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="cmw-eT-zce"/>
@@ -426,16 +426,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDv-e3-1IZ">
-                                <rect key="frame" x="107" y="78" width="196" height="30"/>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Para:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbJ-nS-4Xw">
                                 <rect key="frame" x="29" y="82" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="sZ1-nj-Lrh">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="42"/>
+                                    </constraint>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sZ1-nj-Lrh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="sZ1-nj-Lrh"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mensagem: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNd-NN-Sch">
                                 <rect key="frame" x="29" y="173" width="98" height="21"/>
@@ -445,13 +455,23 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="nAf-GS-Y2F">
                                 <rect key="frame" x="99" y="202" width="434" height="346"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="284" id="I8D-ke-5Ew"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="29" y="218" width="274" height="284"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="I8D-ke-5Ew"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="I8D-ke-5Ew"/>
+                                    </mask>
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5SX-es-t3k">
@@ -462,9 +482,6 @@
                                 <state key="normal" title="Contatos">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="311" y="79" width="63" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="getContatos:" destination="CeL-FW-wkc" eventType="touchUpInside" id="8t1-T5-I7E"/>
                                 </connections>
@@ -474,25 +491,87 @@
                                 <state key="normal" title="enviar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="29" y="510" width="42" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="sendSMS:" destination="CeL-FW-wkc" eventType="touchUpInside" id="eV5-qR-AT2"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDv-e3-1IZ">
+                                <rect key="frame" x="107" y="78" width="196" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="eaG-qb-Rrr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eaG-qb-Rrr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="eaG-qb-Rrr"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nAf-GS-Y2F" firstAttribute="leading" secondItem="EM1-Tb-lH3" secondAttribute="leading" id="2Vo-ho-jen"/>
+                            <constraint firstItem="nAf-GS-Y2F" firstAttribute="leading" secondItem="hhZ-l9-an9" secondAttribute="leadingMargin" constant="13" id="57o-vt-6b8"/>
+                            <constraint firstItem="nAf-GS-Y2F" firstAttribute="top" secondItem="hhZ-l9-an9" secondAttribute="top" constant="218" id="8A8-5h-GUD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nAf-GS-Y2F" secondAttribute="trailing" constant="81" id="CPl-BO-Pd8"/>
+                            <constraint firstItem="5SX-es-t3k" firstAttribute="leading" secondItem="iDv-e3-1IZ" secondAttribute="trailing" constant="31" id="K57-w2-Kd3">
+                                <variation key="heightClass=regular-widthClass=compact" constant="48"/>
+                            </constraint>
+                            <constraint firstItem="nAf-GS-Y2F" firstAttribute="top" secondItem="JNd-NN-Sch" secondAttribute="bottom" constant="24" id="SFp-zX-Sc8"/>
+                            <constraint firstItem="nAf-GS-Y2F" firstAttribute="leading" secondItem="JNd-NN-Sch" secondAttribute="leading" id="XFh-ZM-4wp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5SX-es-t3k" secondAttribute="trailing" constant="18" id="h7j-iu-VsR"/>
+                            <constraint firstItem="EM1-Tb-lH3" firstAttribute="top" secondItem="nAf-GS-Y2F" secondAttribute="bottom" constant="8" symbolic="YES" id="i6K-gP-9gD"/>
+                            <constraint firstItem="nAf-GS-Y2F" firstAttribute="leading" secondItem="CbJ-nS-4Xw" secondAttribute="leading" id="nKE-Q9-8K4"/>
+                            <constraint firstItem="5SX-es-t3k" firstAttribute="baseline" secondItem="CbJ-nS-4Xw" secondAttribute="baseline" id="oiB-WP-9Rr"/>
+                            <constraint firstItem="5SX-es-t3k" firstAttribute="top" secondItem="PSv-CA-L3x" secondAttribute="bottom" constant="15" id="uOt-T2-Dnc"/>
+                            <constraint firstItem="5SX-es-t3k" firstAttribute="baseline" secondItem="iDv-e3-1IZ" secondAttribute="baseline" id="ycB-tr-upV"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="5SX-es-t3k"/>
                                 <exclude reference="EM1-Tb-lH3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2Vo-ho-jen"/>
+                                <exclude reference="57o-vt-6b8"/>
+                                <exclude reference="8A8-5h-GUD"/>
+                                <exclude reference="CPl-BO-Pd8"/>
+                                <exclude reference="SFp-zX-Sc8"/>
+                                <exclude reference="XFh-ZM-4wp"/>
+                                <exclude reference="nKE-Q9-8K4"/>
+                                <exclude reference="K57-w2-Kd3"/>
+                                <exclude reference="h7j-iu-VsR"/>
+                                <exclude reference="oiB-WP-9Rr"/>
+                                <exclude reference="uOt-T2-Dnc"/>
+                                <exclude reference="ycB-tr-upV"/>
+                                <exclude reference="i6K-gP-9gD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="5SX-es-t3k"/>
                                 <include reference="EM1-Tb-lH3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2Vo-ho-jen"/>
+                                <include reference="57o-vt-6b8"/>
+                                <include reference="8A8-5h-GUD"/>
+                                <include reference="CPl-BO-Pd8"/>
+                                <include reference="SFp-zX-Sc8"/>
+                                <include reference="XFh-ZM-4wp"/>
+                                <include reference="nKE-Q9-8K4"/>
+                                <include reference="K57-w2-Kd3"/>
+                                <include reference="h7j-iu-VsR"/>
+                                <include reference="oiB-WP-9Rr"/>
+                                <include reference="uOt-T2-Dnc"/>
+                                <include reference="ycB-tr-upV"/>
+                                <include reference="i6K-gP-9gD"/>
                             </mask>
                         </variation>
                     </view>
@@ -504,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xim-gG-DLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3546" y="-173.25"/>
+            <point key="canvasLocation" x="3546" y="-172.875"/>
         </scene>
         <!--EMAIL-->
         <scene sceneID="yNa-eU-vxR">
@@ -618,7 +697,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0u-6q-CRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3546" y="563.25"/>
+            <point key="canvasLocation" x="3546" y="494.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="edZ-nr-tKN">

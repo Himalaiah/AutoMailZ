@@ -9,6 +9,7 @@
 #import "SMSViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <MessageUI/MessageUI.h>
+#import "LocaisViewController.h"
 
 @interface SMSViewController ()
 
@@ -69,7 +70,7 @@
     if(![MFMessageComposeViewController canSendText]) {
         UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [warningAlert show];
-        return;
+        
     }
     
     NSArray *recipents = @[_contatoNumber.text];
@@ -97,11 +98,22 @@
     //[messageController messageComposeDelegate];
                // [self dismissViewControllerAnimated:YES completion:nil];
     //messageController = nil;
-
+    
+    
+    for (UIViewController *controler in self.navigationController.viewControllers) {
+        if ([controler isKindOfClass:[LocaisViewController class]]) {
+            [self.navigationController popToViewController:controler animated:YES];
+            break;
+        }
+    }
 }
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 @end

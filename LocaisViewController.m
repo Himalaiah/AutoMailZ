@@ -51,7 +51,6 @@
     [mapa  removeAnnotation:_user];
     _user=[locations lastObject];
     
-    [mapa  addAnnotation:_user];
     MKCoordinateRegion regiao = MKCoordinateRegionMakeWithDistance(_local.regiao.center, 30, 30);
     [mapa setRegion:regiao animated:YES];
     
@@ -98,7 +97,7 @@
 
 {
     MKCircleView *circleView = [[MKCircleView alloc] initWithCircle:(MKCircle *)overlay];
-    circleView.fillColor = [UIColor colorWithRed:0.529 green:0.807 blue:0.98 alpha:0.5];
+    circleView.fillColor = [UIColor colorWithRed:0.47 green:0.803 blue:0.666 alpha:0.5];
     return circleView;
 }
 
@@ -115,6 +114,7 @@
         region.center.longitude = placemark.location.coordinate.longitude;
         [mapa  removeAnnotation:_ponto];
         [mapa  removeAnnotation:_user];
+        [mapa removeOverlay:circle];
         _local.regiao=region;
         _ponto.coordinate=_local.regiao.center;
         [mapa  addAnnotation:_ponto];

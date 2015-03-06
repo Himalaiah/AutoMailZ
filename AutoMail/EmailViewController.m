@@ -7,6 +7,7 @@
 //
 
 #import "EmailViewController.h"
+#import "LocaisViewController.h"
 
 @interface EmailViewController (){
     
@@ -34,6 +35,12 @@
     [mc setSubject:[assuntoEmail text]];
     [mc setMessageBody:[mensagemEmail text] isHTML:NO];
     [mc setToRecipients:destin];
+    for (UIViewController *controler in self.navigationController.viewControllers) {
+        if ([controler isKindOfClass:[LocaisViewController class]]) {
+            [self.navigationController popToViewController:controler animated:YES];
+            break;
+        }
+    }
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
