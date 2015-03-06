@@ -7,6 +7,7 @@
 //
 
 #import "LocaisViewController.h"
+#import "MensagemViewController.h"
 
 @interface LocaisViewController ()
 
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog (@"%@", _local);
     //ponto
     _ponto=[[MKPointAnnotation alloc]init];
     [_ponto setTitle:@"voce esta aqui meu caro!"];
@@ -83,12 +85,14 @@
 
 #pragma mark - Navigation
 
-//// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//
-//}
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([[segue identifier] isEqualToString:@"toSome"]){
+        MensagemViewController *mensagem =[segue destinationViewController];
+        
+        mensagem.local=_local;
+    }
+}
 
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay

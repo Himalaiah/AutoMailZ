@@ -47,12 +47,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LocalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"localCell" forIndexPath:indexPath];
-    //Local *local=_locais[indexPath.row];
-    //cell.nomeLocal.text=singleton.locais[indexPath.row];
+    Local *local=singleton.locais[indexPath.row];
+    cell.nomeLocal.text=local.nome;
     
     return cell;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -93,11 +96,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    if ([[segue identifier] isEqualToString:@"new"]) {
-        [singleton.locais addObject:[[Local alloc]init]];
-    }
-    else if([[segue identifier] isEqualToString:@"edit"]){
+    if([[segue identifier] isEqualToString:@"edit"]){
         LocaisViewController *localDetail = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
@@ -106,5 +105,8 @@
     
 }
 
-
+- (IBAction)createNew:(id)sender {
+    [singleton.locais addObject:[[Local alloc]init]];
+    [self.tableView reloadData];
+}
 @end

@@ -10,6 +10,7 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import <MessageUI/MessageUI.h>
 #import "LocaisViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SMSViewController ()
 
@@ -17,9 +18,21 @@
 
 @implementation SMSViewController
 
+@synthesize contatoNumber, smsText;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if(_local.sms.recipients[0]!=nil){
+        [contatoNumber setText:_local.sms.recipients[0]];
+    }
+    
+    if(_local.sms.body != nil){
+        [smsText setText:_local.sms.body];
+    }
+    
+    smsText.layer.borderColor = [[UIColor blackColor] CGColor];
+    smsText.layer.borderWidth = 1.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,9 +86,9 @@
         
     }
     
-    NSArray *recipents = @[_contatoNumber.text];
+    NSArray *recipents = @[contatoNumber.text];
     
-    NSString *message = [NSString stringWithFormat:_smsText.text, nil];
+    NSString *message = [NSString stringWithFormat:smsText.text, nil];
     
     MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
     messageController.messageComposeDelegate = self;
@@ -88,6 +101,7 @@
     
     [messageController setRecipients:recipents];
     [messageController setBody:message];
+    _local.sms = messageController;
     
     //Present message view controller on screen
   //  [self presentViewController:messageController animated:YES completion:nil];

@@ -10,9 +10,11 @@
 
 @implementation Local
 
+@synthesize email, sms;
+
 -(instancetype)init{
     self=[super init];
-    _nome=@"";
+    _nome=@"Novo Local";
     [self pegarLocal];
     return self;
 }

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "Local.h"
 
 @interface MensagemViewController : UITableViewController
+
+@property Local *local;
 
 @end

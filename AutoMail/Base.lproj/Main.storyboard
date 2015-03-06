@@ -54,7 +54,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="6UM-NJ-Xwf" kind="show" identifier="new" id="9iV-qR-Fje"/>
+                                    <action selector="createNew:" destination="u2L-6V-YMW" eventType="touchUpInside" id="8PB-OB-9r7"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -181,9 +181,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="122" width="353" height="18"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpj-6U-ofG">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -308,7 +305,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="tiR-i2-Udi" kind="show" id="1xm-Nj-7Um"/>
+                                    <segue destination="tiR-i2-Udi" kind="show" identifier="toSome" id="1xm-Nj-7Um"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -349,7 +346,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="CeL-FW-wkc" kind="show" id="nfo-B2-2qO"/>
+                                            <segue destination="CeL-FW-wkc" kind="show" identifier="toSMS" id="nfo-B2-2qO"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="f0l-9X-CsS">
@@ -370,7 +367,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="cqo-0l-mzb" kind="show" id="RbH-DR-vgK"/>
+                                            <segue destination="cqo-0l-mzb" kind="show" identifier="toEmail" id="RbH-DR-vgK"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -428,11 +425,9 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="nAf-GS-Y2F">
                                 <rect key="frame" x="99" y="202" width="434" height="346"/>
-                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="284" id="I8D-ke-5Ew"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -578,7 +573,7 @@
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="38" y="126" width="50" height="21"/>
                                 </variation>
                             </label>
@@ -586,8 +581,8 @@
                                 <rect key="frame" x="105" y="141" width="257" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="127" y="176" width="257" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="127" y="176" width="257" height="32.5"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assunto :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-MM-66A">
@@ -595,7 +590,7 @@
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="38" y="180" width="73" height="21"/>
                                 </variation>
                             </label>
@@ -604,26 +599,25 @@
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="38" y="237" width="95" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="38" y="239" width="146" height="18.5"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uxc-Y5-0PU">
                                 <rect key="frame" x="105" y="87" width="257" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="127" y="122" width="257" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="127" y="121" width="257" height="30"/>
                                 </variation>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFP-IT-BAu">
                                 <rect key="frame" x="80" y="272" width="465" height="189"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="38" y="266" width="346" height="329"/>
                                 </variation>
                             </textView>
@@ -632,15 +626,40 @@
                                 <state key="normal" title="Set!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="645" width="46" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="setEmail:" destination="cqo-0l-mzb" eventType="touchUpInside" id="QMb-jj-aM7"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7ST-1V-w4E" firstAttribute="top" secondItem="i7m-QF-Vcu" secondAttribute="bottom" constant="31" id="3QS-FG-2LN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="07T-XE-MdS" secondAttribute="trailing" constant="161" id="9ZA-2O-QBN"/>
+                            <constraint firstItem="Uxc-Y5-0PU" firstAttribute="top" secondItem="Tke-Pa-GDa" secondAttribute="bottom" constant="57" id="DTN-5j-bu7"/>
+                            <constraint firstItem="xFP-IT-BAu" firstAttribute="trailing" secondItem="qXS-YJ-BcW" secondAttribute="trailingMargin" id="Da2-Bc-XJM"/>
+                            <constraint firstItem="i7m-QF-Vcu" firstAttribute="leading" secondItem="ahU-MM-66A" secondAttribute="trailing" constant="16" id="Drk-cU-mFi"/>
+                            <constraint firstItem="07T-XE-MdS" firstAttribute="leading" secondItem="qXS-YJ-BcW" secondAttribute="leadingMargin" constant="161" id="Gom-iy-bjO"/>
+                            <constraint firstItem="Uxc-Y5-0PU" firstAttribute="trailing" secondItem="qXS-YJ-BcW" secondAttribute="trailingMargin" id="Huf-WN-o3V"/>
+                            <constraint firstItem="i7m-QF-Vcu" firstAttribute="trailing" secondItem="qXS-YJ-BcW" secondAttribute="trailingMargin" id="IlY-8u-Q8S"/>
+                            <constraint firstItem="07T-XE-MdS" firstAttribute="top" secondItem="xFP-IT-BAu" secondAttribute="bottom" constant="50" id="MYe-1k-mJI"/>
+                            <constraint firstItem="i7m-QF-Vcu" firstAttribute="top" secondItem="Uxc-Y5-0PU" secondAttribute="bottom" constant="25" id="NI6-oJ-gv9"/>
+                            <constraint firstItem="Sa9-OF-yBt" firstAttribute="top" secondItem="07T-XE-MdS" secondAttribute="bottom" constant="128" id="OvS-ZD-KGZ"/>
+                            <constraint firstItem="xFP-IT-BAu" firstAttribute="leading" secondItem="qXS-YJ-BcW" secondAttribute="leadingMargin" constant="22" id="UVa-R9-uw8"/>
+                            <constraint firstItem="Uxc-Y5-0PU" firstAttribute="leading" secondItem="mGU-99-Ixe" secondAttribute="trailing" constant="39" id="b76-6k-ffO"/>
+                            <constraint firstItem="mGU-99-Ixe" firstAttribute="leading" secondItem="qXS-YJ-BcW" secondAttribute="leadingMargin" constant="22" id="d4w-zn-tG0"/>
+                            <constraint firstItem="7ST-1V-w4E" firstAttribute="leading" secondItem="qXS-YJ-BcW" secondAttribute="leadingMargin" constant="22" id="ffb-89-7m6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7ST-1V-w4E" secondAttribute="trailing" constant="251" id="i0U-kg-5Tc"/>
+                            <constraint firstItem="Sa9-OF-yBt" firstAttribute="top" secondItem="07T-XE-MdS" secondAttribute="bottom" constant="125" id="jeF-am-dfk"/>
+                            <constraint firstItem="mGU-99-Ixe" firstAttribute="top" secondItem="Tke-Pa-GDa" secondAttribute="bottom" constant="62" id="nad-zA-XMY"/>
+                            <constraint firstItem="07T-XE-MdS" firstAttribute="top" secondItem="xFP-IT-BAu" secondAttribute="bottom" constant="47" id="qtf-t1-4iN"/>
+                            <constraint firstItem="07T-XE-MdS" firstAttribute="leading" secondItem="qXS-YJ-BcW" secondAttribute="leadingMargin" constant="146" id="rR3-Ud-WTV"/>
+                            <constraint firstItem="7ST-1V-w4E" firstAttribute="top" secondItem="ahU-MM-66A" secondAttribute="bottom" constant="36" id="sZe-zv-cUX"/>
+                            <constraint firstItem="xFP-IT-BAu" firstAttribute="top" secondItem="7ST-1V-w4E" secondAttribute="bottom" constant="8" id="u02-vb-Q7U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7ST-1V-w4E" secondAttribute="trailing" constant="200" id="waS-eA-0Li"/>
+                            <constraint firstItem="ahU-MM-66A" firstAttribute="leading" secondItem="qXS-YJ-BcW" secondAttribute="leadingMargin" constant="22" id="wox-5a-iH6"/>
+                            <constraint firstItem="ahU-MM-66A" firstAttribute="top" secondItem="mGU-99-Ixe" secondAttribute="bottom" constant="33" id="yaC-he-lF7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="07T-XE-MdS" secondAttribute="trailing" constant="146" id="zo6-Wv-lxy"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="mGU-99-Ixe"/>
@@ -650,6 +669,34 @@
                                 <exclude reference="Uxc-Y5-0PU"/>
                                 <exclude reference="xFP-IT-BAu"/>
                                 <exclude reference="07T-XE-MdS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="d4w-zn-tG0"/>
+                                <exclude reference="nad-zA-XMY"/>
+                                <exclude reference="DTN-5j-bu7"/>
+                                <exclude reference="Huf-WN-o3V"/>
+                                <exclude reference="b76-6k-ffO"/>
+                                <exclude reference="wox-5a-iH6"/>
+                                <exclude reference="yaC-he-lF7"/>
+                                <exclude reference="Drk-cU-mFi"/>
+                                <exclude reference="IlY-8u-Q8S"/>
+                                <exclude reference="NI6-oJ-gv9"/>
+                                <exclude reference="3QS-FG-2LN"/>
+                                <exclude reference="ffb-89-7m6"/>
+                                <exclude reference="i0U-kg-5Tc"/>
+                                <exclude reference="sZe-zv-cUX"/>
+                                <exclude reference="waS-eA-0Li"/>
+                                <exclude reference="Da2-Bc-XJM"/>
+                                <exclude reference="UVa-R9-uw8"/>
+                                <exclude reference="u02-vb-Q7U"/>
+                                <exclude reference="9ZA-2O-QBN"/>
+                                <exclude reference="Gom-iy-bjO"/>
+                                <exclude reference="MYe-1k-mJI"/>
+                                <exclude reference="qtf-t1-4iN"/>
+                                <exclude reference="rR3-Ud-WTV"/>
+                                <exclude reference="zo6-Wv-lxy"/>
+                                <exclude reference="OvS-ZD-KGZ"/>
+                                <exclude reference="jeF-am-dfk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -661,6 +708,34 @@
                                 <include reference="Uxc-Y5-0PU"/>
                                 <include reference="xFP-IT-BAu"/>
                                 <include reference="07T-XE-MdS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="d4w-zn-tG0"/>
+                                <include reference="nad-zA-XMY"/>
+                                <include reference="DTN-5j-bu7"/>
+                                <include reference="Huf-WN-o3V"/>
+                                <include reference="b76-6k-ffO"/>
+                                <include reference="wox-5a-iH6"/>
+                                <include reference="yaC-he-lF7"/>
+                                <include reference="Drk-cU-mFi"/>
+                                <include reference="IlY-8u-Q8S"/>
+                                <include reference="NI6-oJ-gv9"/>
+                                <include reference="3QS-FG-2LN"/>
+                                <include reference="ffb-89-7m6"/>
+                                <exclude reference="i0U-kg-5Tc"/>
+                                <include reference="sZe-zv-cUX"/>
+                                <include reference="waS-eA-0Li"/>
+                                <include reference="Da2-Bc-XJM"/>
+                                <include reference="UVa-R9-uw8"/>
+                                <include reference="u02-vb-Q7U"/>
+                                <exclude reference="9ZA-2O-QBN"/>
+                                <exclude reference="Gom-iy-bjO"/>
+                                <exclude reference="MYe-1k-mJI"/>
+                                <include reference="qtf-t1-4iN"/>
+                                <include reference="rR3-Ud-WTV"/>
+                                <include reference="zo6-Wv-lxy"/>
+                                <include reference="OvS-ZD-KGZ"/>
+                                <exclude reference="jeF-am-dfk"/>
                             </mask>
                         </variation>
                     </view>
@@ -692,7 +767,4 @@
             <point key="canvasLocation" x="12" y="320"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="9iV-qR-Fje"/>
-    </inferredMetricsTieBreakers>
 </document>

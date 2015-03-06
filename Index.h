@@ -15,4 +15,6 @@
 
 @property Singleton *singleton;
 
+- (IBAction)createNew:(id)sender;
+
 @end
