@@ -148,10 +148,74 @@
 
 
 - (IBAction)setLocation:(id)sender {
-    float raio=self.raioSlider.value/100000;
-    E.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude + raio);
-    W.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude - raio);
-    S.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude - raio, _ponto.coordinate.longitude );
-    N.coordinate=CLLocationCoordinate2DMake(_ponto.coordinate.latitude+ raio, _ponto.coordinate.longitude);
+    float raio = self.raioSlider.value/100000;
+    E.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude + raio);
+    W.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude - raio);
+    S.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude - raio, _ponto.coordinate.longitude );
+    N.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude+ raio, _ponto.coordinate.longitude);
+    
+   
+
+    
+    
+    CLGeocoder *ceo = [[CLGeocoder alloc]init]; //alocando glgceocoder para transformar cordenadas em endereço
+    
+    CLLocation *salvaLugar = [[CLLocation alloc]initWithLatitude:_user.coordinate.latitude longitude:_user.coordinate.longitude];
+    NSString *lugarSalvo; //instanciando cclocation para pegar a loc atual no mapa e usar ele para decodificar em endereço
+    
+    [ceo reverseGeocodeLocation:salvaLugar
+              completionHandler:^(NSArray *placemarks, NSError *error) {
+                  CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                  NSLog(@"placemark %@",placemark);
+                  //String to hold address
+                  NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+              
+                  
+                  UIAlertController* chegou = [UIAlertController alertControllerWithTitle:@"Você marcou este lugar"
+                                               
+                                                                                  message:locatedAt preferredStyle:UIAlertControllerStyleAlert];
+                  
+                  UIAlertAction* ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * action) { 
+                                                                 
+                                                                 [mapa addAnnotation:E];
+                                                                 [mapa addAnnotation:W];
+                                                                 [mapa addAnnotation:S];
+                                                                 [mapa addAnnotation:N];
+                                                                 [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                                                                  target:self
+                                                                                                selector:@selector(somePontos)
+                                                                                                userInfo:nil
+                                                                                                 repeats:NO];
+                                                             }];
+                  [chegou addAction:ok];
+                  
+                  [self presentViewController:chegou animated:YES completion:nil];
+              }
+     
+     
+     
+     ];
+    
+    
+   
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+}
+
+-(void)somePontos{
+  [mapa removeAnnotation:S];
+  [mapa removeAnnotation:W];
+  [mapa removeAnnotation:E];
+  [mapa removeAnnotation:N];
+    NSLog(@"teste");
 }
 @end
