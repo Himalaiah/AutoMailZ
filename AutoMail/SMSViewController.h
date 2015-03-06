@@ -15,5 +15,6 @@
 - (IBAction)getContatos:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *contatoNumber;
+@property (weak, nonatomic) IBOutlet UITextView *smsText;
 
 @end

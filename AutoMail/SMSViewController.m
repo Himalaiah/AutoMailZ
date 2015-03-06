@@ -65,4 +65,43 @@
     [self peoplePickerNavigationController:peoplePicker shouldContinueAfterSelectingPerson:person property:property identifier:identifier];
 }
 
+- (IBAction)sendSMS:(id)sender {
+    if(![MFMessageComposeViewController canSendText]) {
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [warningAlert show];
+        return;
+    }
+    
+    NSArray *recipents = @[_contatoNumber.text];
+    
+    NSString *message = [NSString stringWithFormat:_smsText.text, nil];
+    
+    MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+    messageController.messageComposeDelegate = self;
+    
+    [messageController dismissModalViewControllerAnimated:YES];
+
+    //[  messageController messageComposeDelegate ];
+
+    
+    
+    [messageController setRecipients:recipents];
+    [messageController setBody:message];
+    
+    //Present message view controller on screen
+  //  [self presentViewController:messageController animated:YES completion:nil];
+    
+   // [self presentViewController:messageController animated:YES completion:nil];
+    
+
+    //[messageController messageComposeDelegate];
+               // [self dismissViewControllerAnimated:YES completion:nil];
+    //messageController = nil;
+
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end
