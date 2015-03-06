@@ -13,7 +13,7 @@
 @interface Local : NSObject
 
 @property NSString *nome;
-@property MKCoordinateRegion regiao;;
+@property MKCoordinateRegion regiao;
 
 -(instancetype)init;
 -(instancetype)initWithName:(NSString *)nome;

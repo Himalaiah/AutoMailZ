@@ -43,7 +43,7 @@
     circle=[MKCircle circleWithCenterCoordinate:_local.regiao.center radius:self.raioSlider.value];
     [mapa addOverlay:circle];
     
-    _labelLocal.text=_local.nome;
+    //_labelLocal.text=_local.nome;
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
