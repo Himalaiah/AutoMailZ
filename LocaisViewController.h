@@ -34,8 +34,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelLocal;
 - (IBAction)setLocation:(id)sender;
 
-
-
 @property Local *local;
 
 @end

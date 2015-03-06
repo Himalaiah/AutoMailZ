@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LocaisViewController.h"
 #import "LocalTableViewCell.h"
+#import "Singleton.h"
 
 @interface Index : UITableViewController
 
-@property NSMutableArray *locais;
+@property Singleton *singleton;
 
 @end

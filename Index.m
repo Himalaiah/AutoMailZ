@@ -14,12 +14,12 @@
 
 @implementation Index
 
+@synthesize singleton;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Local *teste=[[Local alloc]initWithName:@"teste"];
+    singleton=[Singleton instance];
     
-    
-    _locais=[NSMutableArray arrayWithObjects:teste, nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -41,14 +41,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _locais.count;
+    return singleton.locais.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LocalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"localCell" forIndexPath:indexPath];
-    Local *local=_locais[indexPath.row];
-    cell.nomeLocal.text=local.nome;
+    //Local *local=_locais[indexPath.row];
+    //cell.nomeLocal.text=singleton.locais[indexPath.row];
     
     return cell;
 }
@@ -95,17 +95,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     if ([[segue identifier] isEqualToString:@"new"]) {
-        LocaisViewController *localDetail = [segue destinationViewController];
-        localDetail.local= [[Local alloc]init];
-
+        [singleton.locais addObject:[[Local alloc]init]];
     }
-    else if ([[segue identifier] isEqualToString:@"edit"]){
+    else if([[segue identifier] isEqualToString:@"edit"]){
         LocaisViewController *localDetail = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         
-        long row =[myIndexPath row];
-        localDetail.local=_locais[row];
+        localDetail.local=singleton.locais[myIndexPath.row];
     }
+    
 }
 
 
