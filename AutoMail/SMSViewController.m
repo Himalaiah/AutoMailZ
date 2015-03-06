@@ -78,11 +78,30 @@
     
     MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
     messageController.messageComposeDelegate = self;
+    
+    [messageController dismissModalViewControllerAnimated:YES];
+
+    //[  messageController messageComposeDelegate ];
+
+    
+    
     [messageController setRecipients:recipents];
     [messageController setBody:message];
     
-    // Present message view controller on screen
-    [self presentViewController:messageController animated:YES completion:nil];
+    //Present message view controller on screen
+  //  [self presentViewController:messageController animated:YES completion:nil];
+    
+   // [self presentViewController:messageController animated:YES completion:nil];
+    
+
+    //[messageController messageComposeDelegate];
+               // [self dismissViewControllerAnimated:YES completion:nil];
+    //messageController = nil;
+
 }
 
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
 @end
