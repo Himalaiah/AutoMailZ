@@ -37,11 +37,10 @@
     UIAlertAction *ok=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
     }];
     Local *local = _singleton.locais.lastObject;
+    [notificacao setRegion: (__bridge CLRegion *)(local.regiao)];
     
-    if (notificacao.region == local.regiao){
-        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-        [EmailViewController apresentarEmail];
-    }
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    //[EmailViewController apresentarEmail];
 
 }
 

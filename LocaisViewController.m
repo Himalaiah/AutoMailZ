@@ -114,7 +114,7 @@
         [mapa  removeAnnotation:_ponto];
         [mapa  removeAnnotation:_user];
         [mapa removeOverlay:circle];
-        _local.regiao=region;
+        _local.regiao=*(&(region));
         _ponto.coordinate=_local.regiao.center;
         [mapa  addAnnotation:_ponto];
         [mapa setRegion:region animated:YES];
