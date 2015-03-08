@@ -158,9 +158,11 @@
     [self.locationManager startMonitoringForRegion:_local.geoRegiao];
 }
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
-    MensagemViewController *mensagem = [[MensagemViewController alloc]init];
-    mensagem.local=_local;
-    [self presentViewController:mensagem animated:YES completion:nil];
+    NSLog(@"teste vai meu");
+    [self performSegueWithIdentifier:@"toSome" sender:self];
+//    MensagemViewController *mensagem = [[MensagemViewController alloc]init];
+//    mensagem.local=_local;
+//    [self presentViewController:mensagem animated:YES completion:nil];
 }
 
 -(void)somePontos{
