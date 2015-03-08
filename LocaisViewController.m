@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog (@"%@", _local);
     //ponto
     _ponto=[[MKPointAnnotation alloc]init];
     [_ponto setTitle:@"voce esta aqui meu caro!"];
@@ -147,67 +146,21 @@
 
 
 - (IBAction)setLocation:(id)sender {
-    float raio = self.raioSlider.value/100000;
-    E.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude + raio);
-    W.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude, _ponto.coordinate.longitude - raio);
-    S.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude - raio, _ponto.coordinate.longitude );
-    N.coordinate = CLLocationCoordinate2DMake(_ponto.coordinate.latitude+ raio, _ponto.coordinate.longitude);
+    NSLog(@"%f",locationManager.maximumRegionMonitoringDistance);
+    if (circle.radius > self.locationManager.maximumRegionMonitoringDistance) {
+        _local.geoRegiao=[[CLCircularRegion alloc]initWithCenter:circle.coordinate radius:self.locationManager.maximumRegionMonitoringDistance identifier:_local.nome];
+        
+    }
+    else{
+        _local.geoRegiao=[[CLCircularRegion alloc]initWithCenter:circle.coordinate radius:circle.radius identifier:_local.nome];
+    }
     
-   
-
-    
-    
-    CLGeocoder *ceo = [[CLGeocoder alloc]init]; //alocando glgceocoder para transformar cordenadas em endereço
-    
-    CLLocation *salvaLugar = [[CLLocation alloc]initWithLatitude:_user.coordinate.latitude longitude:_user.coordinate.longitude];
-    NSString *lugarSalvo; //instanciando cclocation para pegar a loc atual no mapa e usar ele para decodificar em endereço
-    
-    [ceo reverseGeocodeLocation:salvaLugar
-              completionHandler:^(NSArray *placemarks, NSError *error) {
-                  CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                  NSLog(@"placemark %@",placemark);
-                  //String to hold address
-                  NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-              
-                  
-                  UIAlertController* chegou = [UIAlertController alertControllerWithTitle:@"Você marcou este lugar"
-                                               
-                                                                                  message:locatedAt preferredStyle:UIAlertControllerStyleAlert];
-                  
-                  UIAlertAction* ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault
-                                                             handler:^(UIAlertAction * action) { 
-                                                                 
-                                                                 [mapa addAnnotation:E];
-                                                                 [mapa addAnnotation:W];
-                                                                 [mapa addAnnotation:S];
-                                                                 [mapa addAnnotation:N];
-                                                                 [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                                                                  target:self
-                                                                                                selector:@selector(somePontos)
-                                                                                                userInfo:nil
-                                                                                                 repeats:NO];
-                                                             }];
-                  [chegou addAction:ok];
-                  
-                  [self presentViewController:chegou animated:YES completion:nil];
-              }
-     
-     
-     
-     ];
-    
-    
-   
-
-    
-    
-    
-
-    
-    
-    
-    
-    
+    [self.locationManager startMonitoringForRegion:_local.geoRegiao];
+}
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
+    MensagemViewController *mensagem = [[MensagemViewController alloc]init];
+    mensagem.local=_local;
+    [self presentViewController:mensagem animated:YES completion:nil];
 }
 
 -(void)somePontos{
