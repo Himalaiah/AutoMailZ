@@ -7,6 +7,7 @@
 //
 
 #import "EmailViewController.h"
+#import "LocaisViewController.h"
 
 @interface EmailViewController (){
     
@@ -20,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    mensagemEmail.layer.borderColor = [[UIColor blackColor] CGColor];
+    mensagemEmail.layer.borderWidth = 1.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +36,17 @@
     [mc setSubject:[assuntoEmail text]];
     [mc setMessageBody:[mensagemEmail text] isHTML:NO];
     [mc setToRecipients:destin];
+    _local.email = mc;
+    for (UIViewController *controler in self.navigationController.viewControllers) {
+        if ([controler isKindOfClass:[LocaisViewController class]]) {
+            [self.navigationController popToViewController:controler animated:YES];
+            break;
+        }
+    }
+}
+
+-(void)apresentarEmail{
+    [self presentViewController:_local.email animated:YES completion:nil];
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

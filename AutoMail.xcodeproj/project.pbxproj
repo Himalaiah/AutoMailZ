@@ -22,6 +22,8 @@
 		6EC0016B1AA7982800B40316 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC0E6171AA61ED500158F2B /* MapKit.framework */; };
 		6EC0E6161AA5E37400158F2B /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0E6151AA5E37400158F2B /* Local.m */; };
 		6EC0E61A1AA61EE900158F2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC0E6191AA61EE900158F2B /* CoreLocation.framework */; };
+		6ED6C34D1AAA2E6A0056AEA7 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6C34C1AAA2E6A0056AEA7 /* Singleton.m */; };
+		F755E9F61AAB47620097697A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F755E9F51AAB47620097697A /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		6EC0E6151AA5E37400158F2B /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Local.m; path = ../Local.m; sourceTree = "<group>"; };
 		6EC0E6171AA61ED500158F2B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6EC0E6191AA61EE900158F2B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6ED6C34B1AAA2E6A0056AEA7 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		6ED6C34C1AAA2E6A0056AEA7 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		F755E9F51AAB47620097697A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F755E9F61AAB47620097697A /* AudioToolbox.framework in Frameworks */,
 				6EC0016B1AA7982800B40316 /* MapKit.framework in Frameworks */,
 				6EC0E61A1AA61EE900158F2B /* CoreLocation.framework in Frameworks */,
 			);
@@ -89,6 +95,9 @@
 		245696AE1AA4CC8C0018846D = {
 			isa = PBXGroup;
 			children = (
+				F755E9F51AAB47620097697A /* AudioToolbox.framework */,
+				6ED6C34B1AAA2E6A0056AEA7 /* Singleton.h */,
+				6ED6C34C1AAA2E6A0056AEA7 /* Singleton.m */,
 				6EC001691AA78B7B00B40316 /* MessageUI.framework */,
 				6EC001671AA7874000B40316 /* AddressBookUI.framework */,
 				6EC0E6191AA61EE900158F2B /* CoreLocation.framework */,
@@ -275,6 +284,7 @@
 				24A00B971AA4F437008A5C35 /* LocalTableViewCell.m in Sources */,
 				24A00B941AA4F343008A5C35 /* LocaisViewController.m in Sources */,
 				24A00B851AA4F115008A5C35 /* Index.m in Sources */,
+				6ED6C34D1AAA2E6A0056AEA7 /* Singleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

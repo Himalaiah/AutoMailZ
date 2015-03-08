@@ -9,6 +9,8 @@
 #import "SMSViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <MessageUI/MessageUI.h>
+#import "LocaisViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SMSViewController ()
 
@@ -16,9 +18,21 @@
 
 @implementation SMSViewController
 
+@synthesize contatoNumber, smsText;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if(_local.sms.recipients[0]!=nil){
+        [contatoNumber setText:_local.sms.recipients[0]];
+    }
+    
+    if(_local.sms.body != nil){
+        [smsText setText:_local.sms.body];
+    }
+    
+    smsText.layer.borderColor = [[UIColor blackColor] CGColor];
+    smsText.layer.borderWidth = 1.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,12 +83,12 @@
     if(![MFMessageComposeViewController canSendText]) {
         UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [warningAlert show];
-        return;
+        
     }
     
-    NSArray *recipents = @[_contatoNumber.text];
+    NSArray *recipents = @[contatoNumber.text];
     
-    NSString *message = [NSString stringWithFormat:_smsText.text, nil];
+    NSString *message = [NSString stringWithFormat:smsText.text, nil];
     
     MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
     messageController.messageComposeDelegate = self;
@@ -87,6 +101,7 @@
     
     [messageController setRecipients:recipents];
     [messageController setBody:message];
+    _local.sms = messageController;
     
     //Present message view controller on screen
   //  [self presentViewController:messageController animated:YES completion:nil];
@@ -97,11 +112,26 @@
     //[messageController messageComposeDelegate];
                // [self dismissViewControllerAnimated:YES completion:nil];
     //messageController = nil;
+    
+    
+    for (UIViewController *controler in self.navigationController.viewControllers) {
+        if ([controler isKindOfClass:[LocaisViewController class]]) {
+            [self.navigationController popToViewController:controler animated:YES];
+            break;
+        }
+    }
+}
 
+- (void) apresentarSMS{
+[self presentViewController:_local.sms animated:YES completion:nil];
 }
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 @end
