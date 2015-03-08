@@ -671,6 +671,8 @@
                                 <exclude reference="07T-XE-MdS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="OvS-ZD-KGZ"/>
+                                <exclude reference="jeF-am-dfk"/>
                                 <exclude reference="d4w-zn-tG0"/>
                                 <exclude reference="nad-zA-XMY"/>
                                 <exclude reference="DTN-5j-bu7"/>
@@ -695,8 +697,6 @@
                                 <exclude reference="qtf-t1-4iN"/>
                                 <exclude reference="rR3-Ud-WTV"/>
                                 <exclude reference="zo6-Wv-lxy"/>
-                                <exclude reference="OvS-ZD-KGZ"/>
-                                <exclude reference="jeF-am-dfk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -710,6 +710,8 @@
                                 <include reference="07T-XE-MdS"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="OvS-ZD-KGZ"/>
+                                <exclude reference="jeF-am-dfk"/>
                                 <include reference="d4w-zn-tG0"/>
                                 <include reference="nad-zA-XMY"/>
                                 <include reference="DTN-5j-bu7"/>
@@ -734,8 +736,6 @@
                                 <include reference="qtf-t1-4iN"/>
                                 <include reference="rR3-Ud-WTV"/>
                                 <include reference="zo6-Wv-lxy"/>
-                                <include reference="OvS-ZD-KGZ"/>
-                                <exclude reference="jeF-am-dfk"/>
                             </mask>
                         </variation>
                     </view>

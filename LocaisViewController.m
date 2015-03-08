@@ -59,12 +59,7 @@
     //verifica se chegou ao local
     
     if (_user.coordinate.longitude>=W.coordinate.longitude && _user.coordinate.longitude<=E.coordinate.longitude && _user.coordinate.latitude >= S.coordinate.latitude && _user.coordinate.latitude <= N.coordinate.latitude) {
-        
-        UIAlertController *chegou= [UIAlertController alertControllerWithTitle:@"Alerta" message:@"voce chegou ao destino" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-        }];
-        
+
         
         
     }
@@ -119,7 +114,7 @@
         [mapa  removeAnnotation:_ponto];
         [mapa  removeAnnotation:_user];
         [mapa removeOverlay:circle];
-        _local.regiao=region;
+        _local.regiao=*(&(region));
         _ponto.coordinate=_local.regiao.center;
         [mapa  addAnnotation:_ponto];
         [mapa setRegion:region animated:YES];

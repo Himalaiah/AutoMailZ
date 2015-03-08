@@ -21,4 +21,5 @@
 @property (weak, nonatomic) IBOutlet UITextView *smsText;
 @property Local *local;
 
+-(void) apresentarSMS;
 @end

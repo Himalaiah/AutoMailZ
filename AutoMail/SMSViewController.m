@@ -122,6 +122,10 @@
     }
 }
 
+- (void) apresentarSMS{
+[self presentViewController:_local.sms animated:YES completion:nil];
+}
+
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
     [self dismissModalViewControllerAnimated:YES];
