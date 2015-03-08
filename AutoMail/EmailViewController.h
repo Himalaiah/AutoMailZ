@@ -19,5 +19,5 @@
 @property (weak, nonatomic) IBOutlet UITextView *mensagemEmail;
 @property Local *local;
 - (IBAction)setEmail:(id)sender;
-
+- (void) apresentarEmail;
 @end

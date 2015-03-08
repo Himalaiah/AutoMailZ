@@ -32,15 +32,13 @@
     notificacao.regionTriggersOnce = YES;
     _singleton = [Singleton instance];
 
-    UIAlertController *chegou= [UIAlertController alertControllerWithTitle:@"Alerta" message:@"Você chegou ao destino" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *ok=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-    }];
     Local *local = _singleton.locais.lastObject;
-    [notificacao setRegion: (__bridge CLRegion *)(local.regiao)];
+    [notificacao setRegion: (local.regiao)];
     
+    [NSNotificationCenter *notification] = 
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-    //[EmailViewController apresentarEmail];
+    [SMSViewController apresentarSMS];
+    [EmailViewController apresentarEmail];
 
 }
 

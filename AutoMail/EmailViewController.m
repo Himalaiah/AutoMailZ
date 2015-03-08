@@ -45,9 +45,9 @@
     }
 }
 
-//-(void)apresentarEmail{
-//    [self presentedViewController: _local.email animated:YES];
-//}
+-(void)apresentarEmail{
+    [self presentViewController:_local.email animated:YES completion:nil];
+}
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
