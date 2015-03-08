@@ -28,17 +28,18 @@
 //FICA CALCULANDO DISTANCIA DOS LOCAIS. AO ESTAR DENTRO DO RAIO DO CIRCULO E MANDA UMA NOTIFICACAO
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
-    UILocalNotification *notificacao;
-    notificacao.regionTriggersOnce = YES;
-    _singleton = [Singleton instance];
-
-    Local *local = _singleton.locais.lastObject;
-    [notificacao setRegion: (local.regiao)];
-    
-    [NSNotificationCenter *notification] = 
-    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-    [SMSViewController apresentarSMS];
-    [EmailViewController apresentarEmail];
+//    UILocalNotification *notificacao;
+//    notificacao.regionTriggersOnce = YES;
+//    _singleton = [Singleton instance];
+//
+//    Local *local = _singleton.locais.lastObject;
+//    CLRegion *reg= [[CLRegion alloc]init];
+//    [notificacao setRegion: (local.regiao)];
+//    
+//    [NSNotificationCenter *notification] =
+//    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+//    [SMSViewController ];
+//    [local.email apresentarEmail];
 
 }
 

@@ -17,6 +17,8 @@
 
 @property NSString *nome;
 @property MKCoordinateRegion regiao;
+@property CLCircularRegion *geoRegiao;
+
 @property MFMessageComposeViewController *sms;
 @property MFMailComposeViewController *email;
 @property NSMutableArray *locais;
