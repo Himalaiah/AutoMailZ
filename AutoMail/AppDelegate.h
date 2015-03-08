@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocaisViewController.h"
+#import <AudioToolbox/AudioServices.h>
+#import "Local.h"
+#import "Singleton.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

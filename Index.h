@@ -10,6 +10,8 @@
 #import "LocaisViewController.h"
 #import "LocalTableViewCell.h"
 #import "Singleton.h"
+#import "Local.h"
+#import "AppDelegate.h"
 
 @interface Index : UITableViewController
 
