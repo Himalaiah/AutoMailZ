@@ -59,12 +59,7 @@
     //verifica se chegou ao local
     
     if (_user.coordinate.longitude>=W.coordinate.longitude && _user.coordinate.longitude<=E.coordinate.longitude && _user.coordinate.latitude >= S.coordinate.latitude && _user.coordinate.latitude <= N.coordinate.latitude) {
-        
-        UIAlertController *chegou= [UIAlertController alertControllerWithTitle:@"Alerta" message:@"voce chegou ao destino" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-        }];
-        
+
         
         
     }

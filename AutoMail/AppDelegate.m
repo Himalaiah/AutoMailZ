@@ -27,16 +27,26 @@
 
 //FICA CALCULANDO DISTANCIA DOS LOCAIS. AO ESTAR DENTRO DO RAIO DO CIRCULO E MANDA UMA NOTIFICACAO
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    UILocalNotification *notificacao;
-
-    notificacao.regionTriggersOnce =
     
+    UILocalNotification *notificacao;
+    notificacao.regionTriggersOnce = YES;
+    _singleton = [Singleton instance];
+
+    UIAlertController *chegou= [UIAlertController alertControllerWithTitle:@"Alerta" message:@"Você chegou ao destino" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    }];
+    Local *local = _singleton.locais.lastObject;
+    
+    if (notificacao.region == local.regiao){
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+        [EmailViewController apresentarEmail];
+    }
 
 }
 
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-    [self presentViewController:mc animated:YES completion:NULL];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -45,10 +55,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    [self.]
 }
 
 

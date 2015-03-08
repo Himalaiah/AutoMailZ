@@ -19,6 +19,7 @@
 @property MKCoordinateRegion regiao;
 @property MFMessageComposeViewController *sms;
 @property MFMailComposeViewController *email;
+@property NSMutableArray *locais;
 
 -(instancetype)init;
 -(instancetype)initWithName:(NSString *)nome;
