@@ -57,9 +57,6 @@
     [self.tableView reloadData];
 }
 
--(void)apresentarEmail{
-    
-}
 
 /*
 // Override to support conditional editing of the table view.

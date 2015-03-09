@@ -160,6 +160,14 @@
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
     NSLog(@"teste vai meu");
     [self performSegueWithIdentifier:@"toSome" sender:self];
+//    if (!(_local.email==nil)){
+//        [self presentViewController:_local.email animated:NO completion:nil];
+//    }
+    
+//    if (!(_local.sms==nil)){
+//        [self presentViewController:_local.sms animated:NO completion:nil];
+//    }
+    
 //    MensagemViewController *mensagem = [[MensagemViewController alloc]init];
 //    mensagem.local=_local;
 //    [self presentViewController:mensagem animated:YES completion:nil];

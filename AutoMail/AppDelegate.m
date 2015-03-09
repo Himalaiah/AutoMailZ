@@ -45,6 +45,7 @@
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
