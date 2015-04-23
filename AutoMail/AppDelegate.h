@@ -11,6 +11,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import "Local.h"
 #import "Singleton.h"
+#import <MailCore/MailCore.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

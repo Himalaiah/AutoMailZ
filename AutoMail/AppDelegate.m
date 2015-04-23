@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <MailCore/MailCore.h>
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    MCOSMTPSession *smtpSession = [[MCOSMTPSession alloc] init];
+    smtpSession.hostname = @"smtp.gmail.com";
+    smtpSession.port = 465;
+    smtpSession.username = @"Sua conta de gmail aqui";
+    smtpSession.password = @"sua senha da conta";
+    smtpSession.authType = MCOAuthTypeSASLPlain;
+    smtpSession.connectionType = MCOConnectionTypeTLS;
+    
+    MCOMessageBuilder *builder = [[MCOMessageBuilder alloc] init];
+    MCOAddress *from = [MCOAddress addressWithDisplayName:@"Matt R"
+                                                  mailbox:@"matt@gmail.com"];
+    MCOAddress *to = [MCOAddress addressWithDisplayName:nil
+                                                mailbox:@"endereço de email a ser enviado"];
+    [[builder header] setFrom:from];
+    [[builder header] setTo:@[to]];
+    [[builder header] setSubject:@"My message"];
+    [builder setHTMLBody:@"This is a test message!"];
+    NSData * rfc822Data = [builder data];
+    
+    MCOSMTPSendOperation *sendOperation =
+    [smtpSession sendOperationWithData:rfc822Data];
+    [sendOperation start:^(NSError *error) {
+        if(error) {
+            NSLog(@"Error sending email: %@", error);
+        } else {
+            NSLog(@"Successfully sent email!");
+        }
+    }];
     return YES;
 }
 
